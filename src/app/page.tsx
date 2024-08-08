@@ -1,3 +1,9 @@
+import Link from 'next/link';
+
 export default function Home() {
-  return <main>메인페이지</main>;
+  return (
+    <main>
+      <Link href="/test">테스트 하러 가기</Link>
+    </main>
+  );
 }
