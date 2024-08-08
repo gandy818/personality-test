@@ -31,15 +31,15 @@ git remote add origin 새 저장소
 ## 프로젝트 설명
 
 next14 + dasisyui 기반으로 이루어져 있습니다.  
-초기 기본적인 세팅을 마친 코어 파일로, 새 프로젝트를 시작할 때 클론하여 사용하기 위함입니다.
+초기 기본적인 세팅을 마친 코어 파일로, 새 프로젝트를 시작할 때 클론하여 사용하면 됩니다.
 
 <br />
 
 ## 포함되어 있는 구성
 
-- react
-- next.js14
-- typescript
-- tailwindcss
-- daisyui
-- font 파일 (Montserrat, Pretendard)
+- React
+- Next.js14
+- Typescript
+- Tailwindcss
+- Daisyui
+- Font 파일 (Montserrat, Pretendard)
