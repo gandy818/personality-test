@@ -1,19 +1,45 @@
-시작하기
+## 시작하기
+
+1. 필요한 패키지를 설치합니다.
+
+```
 npm install
+```
 
+2. 프로젝트를 실행합니다.
+
+```
 npm run dev
-브라우저에서 http://localhost:3000로 접속하여 확인할 수 있습니다.
+```
 
-프로젝트 설명
-next + dasisyui 기반의 코어파일입니다.
-최대한 기본적인 기능만 추가하며 불필요한 파일, 라이브러리의 생성, 설치 등을 지양합니다.
+3. 프로젝트가 정상적으로 클론 되었다면 기존 깃 저장소 연결을 끊습니다.
 
-사용한 기술 스택
-react
-nextjs
-typescript
-tailwindcss
-daisyui
-eslintgit remote add origin https://github.com/gandy818/next-daisyui.git
-git branch -M main
-git push -u origin main
+```
+git remote remove origin
+```
+
+4. 새로 연결할 저장소에 레포지토리를 연결합니다.
+
+```
+git remote add origin 새 저장소
+```
+
+**브라우저에서 http://localhost:3000로 접속하여 확인할 수 있습니다.**
+
+<br />
+
+## 프로젝트 설명
+
+next14 + dasisyui 기반으로 이루어져 있습니다.  
+초기 기본적인 세팅을 마친 코어 파일로, 새 프로젝트를 시작할 때 클론하여 사용하기 위함입니다.
+
+<br />
+
+## 포함되어 있는 구성
+
+- react
+- next.js14
+- typescript
+- tailwindcss
+- daisyui
+- font 파일 (Montserrat, Pretendard)
