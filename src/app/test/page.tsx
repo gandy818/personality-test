@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function Test1() {
@@ -186,7 +185,7 @@ export default function Test1() {
       {onStart && clickCount < 12 && (
         <>
           <progress
-            className="progress progress-primary self-center"
+            className="progress color-[#f7ad97] self-center transition-transform"
             value={progressValue}
             max="120"
           />
@@ -197,14 +196,14 @@ export default function Test1() {
           {/* 답변 */}
           <div className="flex flex-col gap-2">
             <button
-              className="btn btn-outline"
+              className="border px-4 py-10 rounded-lg border-[#b7b6d6] bg-[#b7b6d683] text-[#33344d]"
               onClick={() => getResult(data[clickCount].type, 'A')}
             >
               {data[clickCount].answers.A}
             </button>
 
             <button
-              className="btn btn-outline"
+              className="border px-4 py-10 rounded-lg border-[#e2bbd8] bg-[#e2bbd87a] text-[#33344d]"
               onClick={() => getResult(data[clickCount].type, 'B')}
             >
               {data[clickCount].answers.B}
