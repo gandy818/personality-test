@@ -1,6 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Result from '../components/Result';
 
 export default function Test1() {
   const [onStart, setOnStart] = useState(false);
@@ -215,7 +217,7 @@ export default function Test1() {
       {/* 결과화면 */}
       {onStart && clickCount === 12 && (
         <>
-          <div>당신의 MBTI는 {mbti}입니다!</div>
+          <Result mbti={mbti} />
           {/* 다시하기 버튼 */}
           <button className="btn w-full mt-4" onClick={() => window.location.reload()}>
             다시하기
