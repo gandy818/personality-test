@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Result from '../components/Result';
 
@@ -16,7 +15,7 @@ export default function Test1() {
   });
   const [mbti, setMbti] = useState('');
 
-  // 문제
+  // 질문
   const data = [
     {
       question: '드디어 금요일이다! 술 마시자 술 술 술!',
@@ -76,15 +75,16 @@ export default function Test1() {
       },
     },
     {
-      question: '회사는 ',
+      question:
+        '나 : 오늘은 꼭 퇴근하고 운동도 하고 공부도 하고 자기계발 하다가 자야지!\n\n단톡 : 자랭 할 사람?',
       type: 'jp',
       answers: {
-        A: '그래도 체계적이여야지',
-        B: '딱딱한 분위기 별로. 자유로운게 좋지 편하고',
+        A: '오 다섯명 되면 ㄱㄱㄱ',
+        B: 'ㄴㄴ 나 오늘은 안됨',
       },
     },
     {
-      question: '친구들와 우리 집에 누워 각자 할 걸 하고 있는 지금은?',
+      question: '친구들과 우리 집에 누워 각자 할 걸 하고 있는 지금은?',
       type: 'ei',
       answers: {
         A: '편안한 휴식시간이다.',
@@ -104,7 +104,7 @@ export default function Test1() {
       type: 'tf',
       answers: {
         A: '진짜? 내가 태어났을 때의 정확한 정보를 알 수 있어 흥미롭겠군.',
-        B: '진짜? 30살 되기 전에 무조건 발급 받아야겠다. 그때 부모님의 필적.. 심정.. 생각만 해도 벌써 울컥행 ㅜ',
+        B: '진짜? 그때 부모님의 필적.. 심정.. 생각만 해도 벌써 울컥행 ㅜ',
       },
     },
     {
@@ -189,11 +189,11 @@ export default function Test1() {
           <progress
             className="progress color-[#f7ad97] self-center transition-transform"
             value={progressValue}
-            max="120"
+            max="130"
           />
-          <div>
-            <h3>{data[clickCount].question}</h3>
-          </div>
+          <h3 style={{ whiteSpace: 'pre-wrap' }}>
+            <div>{data[clickCount].question}</div>
+          </h3>
 
           {/* 답변 */}
           <div className="flex flex-col gap-2">

@@ -16,6 +16,20 @@ export default function Result({ mbti }: { mbti: string }) {
   }
 
   {
+    if (mbti === 'ESTJ')
+      return (
+        <Image
+          src="/images/김보겸_결과.png"
+          alt="결과"
+          width={400}
+          height={500}
+          layout="responsive"
+          unoptimized
+        />
+      );
+  }
+
+  {
     if (mbti === 'INFP')
       return (
         <Image
