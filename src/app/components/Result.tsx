@@ -89,7 +89,7 @@ export default function Result({ mbti }: { mbti: string }) {
     if (mbti === 'ESFP')
       return (
         <Image
-          src="/images/이윤종_결과.png"
+          src="/images/고다원_결과.png"
           alt="결과"
           width={400}
           height={500}
