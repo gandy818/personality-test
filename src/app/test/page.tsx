@@ -76,10 +76,10 @@ export default function Test1() {
     },
     {
       question:
-        '나 : 오늘은 꼭 퇴근하고 운동도 하고 공부도 하고 자기계발 하다가 자야지!\n\n단톡 : 자랭 할 사람?',
+        '나 : 오늘은 꼭 퇴근하고 운동도 하고 공부도 하고 자기계발 하다가 자야지!\n\n 단톡 : 오늘 번개로 만날 사람?',
       type: 'jp',
       answers: {
-        A: '오 다섯명 되면 ㄱㄱㄱ',
+        A: '오 완전 좋지 ㄱㄱㄱ',
         B: 'ㄴㄴ 나 오늘은 안됨',
       },
     },
@@ -180,57 +180,59 @@ export default function Test1() {
   }, [result]);
 
   return (
-    <div className="h-screen flex flex-col justify-around py-10 text-center">
-      <h1 className="font-semibold text-2xl">간단 테스트</h1>
+    <main className="h-screen flex justify-center items-center">
+      <div className="h-screen flex flex-col justify-around py-10 text-center w-full">
+        <h1 className="font-semibold text-2xl">간단 테스트</h1>
 
-      {/* 질문 */}
-      {onStart && clickCount < 12 && (
-        <>
-          <progress
-            className="progress color-[#f7ad97] self-center transition-transform"
-            value={progressValue}
-            max="130"
-          />
-          <h3 style={{ whiteSpace: 'pre-wrap' }}>
-            <div>{data[clickCount].question}</div>
-          </h3>
+        {/* 질문 */}
+        {onStart && clickCount < 12 && (
+          <>
+            <progress
+              className="progress color-[#f7ad97] self-center transition-transform"
+              value={progressValue}
+              max="130"
+            />
+            <h3 style={{ whiteSpace: 'pre-wrap' }}>
+              <div>{data[clickCount].question}</div>
+            </h3>
 
-          {/* 답변 */}
-          <div className="flex flex-col gap-2">
-            <button
-              className="border px-4 py-10 rounded-lg border-[#b7b6d6] bg-[#b7b6d683] text-[#33344d]"
-              onClick={() => getResult(data[clickCount].type, 'A')}
-            >
-              {data[clickCount].answers.A}
+            {/* 답변 */}
+            <div className="flex flex-col gap-2">
+              <button
+                className="border px-4 py-10 rounded-lg border-[#b7b6d6] bg-[#b7b6d683] text-[#33344d]"
+                onClick={() => getResult(data[clickCount].type, 'A')}
+              >
+                {data[clickCount].answers.A}
+              </button>
+
+              <button
+                className="border px-4 py-10 rounded-lg border-[#e2bbd8] bg-[#e2bbd87a] text-[#33344d]"
+                onClick={() => getResult(data[clickCount].type, 'B')}
+              >
+                {data[clickCount].answers.B}
+              </button>
+            </div>
+          </>
+        )}
+
+        {/* 결과화면 */}
+        {onStart && clickCount === 12 && (
+          <>
+            <Result mbti={mbti} />
+            {/* 다시하기 버튼 */}
+            <button className="btn w-full mt-4" onClick={() => window.location.reload()}>
+              다시하기
             </button>
+          </>
+        )}
 
-            <button
-              className="border px-4 py-10 rounded-lg border-[#e2bbd8] bg-[#e2bbd87a] text-[#33344d]"
-              onClick={() => getResult(data[clickCount].type, 'B')}
-            >
-              {data[clickCount].answers.B}
-            </button>
-          </div>
-        </>
-      )}
-
-      {/* 결과화면 */}
-      {onStart && clickCount === 12 && (
-        <>
-          <Result mbti={mbti} />
-          {/* 다시하기 버튼 */}
-          <button className="btn w-full mt-4" onClick={() => window.location.reload()}>
-            다시하기
+        {/* 시작하기 버튼 */}
+        {!onStart && (
+          <button className="btn w-full mt-4" onClick={() => setOnStart(true)}>
+            시작하기
           </button>
-        </>
-      )}
-
-      {/* 시작하기 버튼 */}
-      {!onStart && (
-        <button className="btn w-full mt-4" onClick={() => setOnStart(true)}>
-          시작하기
-        </button>
-      )}
-    </div>
+        )}
+      </div>
+    </main>
   );
 }
