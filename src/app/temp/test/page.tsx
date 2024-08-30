@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Result from '../components/Result';
+import Result from '../../components/Result';
 
 export default function Test1() {
   const [onStart, setOnStart] = useState(false);
