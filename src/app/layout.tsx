@@ -13,6 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="max-w-[500px] mx-auto">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2998824044846392"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body className=" px-4 py-2">{children}</body>
     </html>
   );
