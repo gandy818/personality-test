@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="max-w-[500px] mx-auto">
+    <html lang="en" className="max-w-[1024px] mx-auto">
       <head>
         <script
           async
