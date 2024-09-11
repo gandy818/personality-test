@@ -21,11 +21,11 @@ export default function Home() {
         </button>
       </div>
 
-      {questionCount && (
+      {questionCount > 0 && (
         <div className="mt-8">
           <p>선택한 문제 수: {questionCount}</p>
-          {/* 시작 버튼을 추가해서 문제 풀이로 넘어갈 수 있게 만듭니다. */}
-          <Link href={`/proverb/quiz`} className="btn mt-4">
+          {/* 문제 수를 쿼리로 전달 */}
+          <Link href={`/proverb/quiz?count=${questionCount}`} className="btn mt-4">
             시작
           </Link>
         </div>

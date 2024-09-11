@@ -8,21 +8,30 @@ interface Proverb {
   back: string;
 }
 
+// result의 타입 정의
+interface Result {
+  index: number;
+  answer: string;
+}
+
 // Quiz 컴포넌트의 props 타입 정의
 interface QuizProps {
   totalQuestions: number;
   proverbs: Proverb[];
-  onFinish: (results: string[]) => void;
+  onFinish: (results: Result[]) => void;
 }
 
 export default function Quiz({ totalQuestions, proverbs, onFinish }: QuizProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [results, setResults] = useState<string[]>([]);
-  const [timer, setTimer] = useState<number>(3); // 3초 타이머 설정
+  const [results, setResults] = useState<Result[]>([]);
+  const [timer, setTimer] = useState<number>(5); // 5초 타이머 설정
+  const [unaskedQuestions, setUnaskedQuestions] = useState(
+    Array.from({ length: totalQuestions }, (_, index) => index)
+  );
 
-  // 타이머 업데이트 및 3초 후 답 표시
+  // 타이머 업데이트 및 5초 후 답 표시
   useEffect(() => {
     if (timer > 0) {
       const countdown = setTimeout(() => {
@@ -36,20 +45,27 @@ export default function Quiz({ totalQuestions, proverbs, onFinish }: QuizProps) 
 
   // 문제 번호가 바뀔 때마다 타이머와 답을 리셋
   useEffect(() => {
-    setTimer(3); // 타이머를 3초로 리셋
+    setTimer(5); // 타이머를 5초로 리셋
     setShowAnswer(false);
   }, [currentQuestionIndex]);
 
-  // 배경색을 타이머 값에 따라 다르게 설정
-  const backgroundColor = timer === 3 ? 'bg-white' : timer === 2 ? 'bg-red-200' : 'bg-red-500';
+  // 현재 풀고 있는 문제의 순서 계산 (현재까지 푼 문제 수 = 총 문제 - 남은 문제 수)
+  const currentQuestionNumber = totalQuestions - unaskedQuestions.length + 1;
 
-  // 다음 문제로 넘어가는 함수
   const handleNext = () => {
     if (selectedAnswer) {
-      setResults([...results, selectedAnswer]);
+      // 결과 배열에 현재 문제의 인덱스와 선택한 답을 저장
+      setResults([...results, { index: currentQuestionIndex, answer: selectedAnswer }]);
 
-      if (currentQuestionIndex + 1 < totalQuestions) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
+      if (unaskedQuestions.length > 0) {
+        const randomIndex = Math.floor(Math.random() * unaskedQuestions.length); // 남은 질문 중 랜덤 인덱스
+        const nextQuestionIndex = unaskedQuestions[randomIndex];
+
+        // 랜덤으로 선택된 질문 인덱스를 제외하고 새로운 배열 생성
+        const newUnaskedQuestions = unaskedQuestions.filter((_, index) => index !== randomIndex);
+
+        setCurrentQuestionIndex(nextQuestionIndex); // 랜덤하게 선택된 질문으로 이동
+        setUnaskedQuestions(newUnaskedQuestions); // 남은 질문 업데이트
         setSelectedAnswer(null); // 답 초기화
       } else {
         onFinish(results); // 모든 문제를 풀었을 때 결과 전달
@@ -59,10 +75,10 @@ export default function Quiz({ totalQuestions, proverbs, onFinish }: QuizProps) 
 
   return (
     <div
-      className={`flex flex-col items-center justify-center min-h-screen ${backgroundColor} transition-all duration-1000`}
+      className={`flex flex-col items-center justify-center min-h-screen transition-all duration-1000`}
     >
       <h2 className="text-xl font-bold">
-        문제 {currentQuestionIndex + 1} / {totalQuestions}
+        문제 {currentQuestionNumber} / {totalQuestions}
       </h2>
 
       {/* 타이머 표시 (크게 보이도록) */}
@@ -83,7 +99,7 @@ export default function Quiz({ totalQuestions, proverbs, onFinish }: QuizProps) 
           className={`btn ${selectedAnswer === 'pass' ? 'btn-primary' : ''}`}
           onClick={() => setSelectedAnswer('pass')}
         >
-          땡패스
+          땡
         </button>
         <button
           className={`btn ${selectedAnswer === 'correct' ? 'btn-primary' : ''}`}
