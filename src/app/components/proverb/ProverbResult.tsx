@@ -15,7 +15,7 @@ interface ResultsProps {
   proverbs: Proverb[]; // Proverb 타입의 배열
 }
 
-const Results = ({ results, proverbs }: ResultsProps) => {
+const ProverbResults = ({ results, proverbs }: ResultsProps) => {
   const searchParams = useSearchParams();
   const totalQuestions = parseInt(searchParams.get('count') || '0', 10); // 쿼리 파라미터에서 총 문제 수를 가져옴
   const correctCount = results.filter((result) => result.answer === 'correct').length;
@@ -40,4 +40,4 @@ const Results = ({ results, proverbs }: ResultsProps) => {
   );
 };
 
-export default Results;
+export default ProverbResults;

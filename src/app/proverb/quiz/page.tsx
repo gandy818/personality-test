@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Quiz from '@/app/components/proverb/Quiz';
-import Results from '@/app/components/proverb/Result';
+import ProverbQuiz from '@/app/components/proverb/ProverbQuiz';
+import ProverbResult from '@/app/components/proverb/ProverbResult';
 import { useSearchParams } from 'next/navigation';
 
 // 속담 타입 정의
@@ -85,13 +85,13 @@ export default function QuizPage() {
   return (
     <div className="container mx-auto">
       {!isQuizFinished ? (
-        <Quiz
+        <ProverbQuiz
           totalQuestions={Number(count)} // 총 문제 수를 proverbs 배열의 길이로 설정
           proverbs={proverbs} // 속담 데이터를 Quiz로 전달
           onFinish={handleFinish} // 퀴즈 완료 후 호출되는 함수
         />
       ) : (
-        <Results results={results} proverbs={proverbs} />
+        <ProverbResult results={results} proverbs={proverbs} />
       )}
     </div>
   );

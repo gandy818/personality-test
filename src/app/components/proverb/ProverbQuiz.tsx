@@ -21,7 +21,7 @@ interface QuizProps {
   onFinish: (results: Result[]) => void;
 }
 
-export default function Quiz({ totalQuestions, proverbs, onFinish }: QuizProps) {
+export default function ProverbQuiz({ totalQuestions, proverbs, onFinish }: QuizProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
