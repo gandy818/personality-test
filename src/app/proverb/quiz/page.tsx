@@ -21,7 +21,7 @@ export default function QuizPage() {
   const [isQuizFinished, setIsQuizFinished] = useState<boolean>(false);
   const [results, setResults] = useState<Result[]>([]);
   const searchParams = useSearchParams();
-  const count = searchParams.get('count'); // 쿼리에서 문제 수를 가져옴
+  const count = searchParams.get('count') === null ? '10' : searchParams.get('count'); // 쿼리에서 문제 수를 가져옴
 
   const proverbs: Proverb[] = [
     { front: '가는 말이 고와야', back: '오는 말이 곱다' },
@@ -86,7 +86,7 @@ export default function QuizPage() {
     <div className="container mx-auto">
       {!isQuizFinished ? (
         <ProverbQuiz
-          totalQuestions={Number(count)} // 총 문제 수를 proverbs 배열의 길이로 설정
+          totalQuestions={Number(count)}
           proverbs={proverbs} // 속담 데이터를 Quiz로 전달
           onFinish={handleFinish} // 퀴즈 완료 후 호출되는 함수
         />
