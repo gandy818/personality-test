@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import ProverbQuiz from '@/app/components/proverb/ProverbQuiz';
 import ProverbResult from '@/app/components/proverb/ProverbResult';
 import { useSearchParams } from 'next/navigation';
@@ -83,16 +83,18 @@ export default function QuizPage() {
   };
 
   return (
-    <div className="container mx-auto">
-      {!isQuizFinished ? (
-        <ProverbQuiz
-          totalQuestions={Number(count)}
-          proverbs={proverbs} // 속담 데이터를 Quiz로 전달
-          onFinish={handleFinish} // 퀴즈 완료 후 호출되는 함수
-        />
-      ) : (
-        <ProverbResult results={results} proverbs={proverbs} />
-      )}
-    </div>
+    <Suspense>
+      <div className="container mx-auto">
+        {!isQuizFinished ? (
+          <ProverbQuiz
+            totalQuestions={Number(count)}
+            proverbs={proverbs} // 속담 데이터를 Quiz로 전달
+            onFinish={handleFinish} // 퀴즈 완료 후 호출되는 함수
+          />
+        ) : (
+          <ProverbResult results={results} proverbs={proverbs} />
+        )}
+      </div>
+    </Suspense>
   );
 }
