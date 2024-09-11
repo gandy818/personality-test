@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 // 속담 타입 정의
 interface Proverb {
@@ -15,7 +16,7 @@ interface ResultsProps {
   proverbs: Proverb[]; // Proverb 타입의 배열
 }
 
-const ProverbResults = ({ results, proverbs }: ResultsProps) => {
+export default function ProverbResult({ results, proverbs }: ResultsProps) {
   const searchParams = useSearchParams();
   const totalQuestions = parseInt(searchParams.get('count') || '0', 10); // 쿼리 파라미터에서 총 문제 수를 가져옴
   const correctCount = results.filter((result) => result.answer === 'correct').length;
@@ -30,14 +31,15 @@ const ProverbResults = ({ results, proverbs }: ResultsProps) => {
         {results.map((result, index) => (
           <div key={index} className="mb-2">
             <p>
-              {result.index + 1}. {proverbs[result.index].front} {proverbs[result.index].back} -{' '}
+              {index + 1}. {proverbs[result.index].front} {proverbs[result.index].back} -{' '}
               {result.answer === 'correct' ? '정답' : '오답'}
             </p>
           </div>
         ))}
       </div>
+      <Link href="/" className="btn">
+        다시하기
+      </Link>
     </div>
   );
-};
-
-export default ProverbResults;
+}

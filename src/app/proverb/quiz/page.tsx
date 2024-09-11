@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import ProverbQuiz from '@/app/components/proverb/ProverbQuiz';
-import ProverbResult from '@/app/components/proverb/ProverbResult';
+import ProverbQuiz from '@/components/proverb/ProverbQuiz';
+import ProverbResult from '@/components/proverb/ProverbResult';
 import { useSearchParams } from 'next/navigation';
 
 // 속담 타입 정의

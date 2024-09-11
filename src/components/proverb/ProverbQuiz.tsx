@@ -26,12 +26,12 @@ export default function ProverbQuiz({ totalQuestions, proverbs, onFinish }: Quiz
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [results, setResults] = useState<Result[]>([]);
-  const [timer, setTimer] = useState<number>(5); // 5초 타이머 설정
+  const [timer, setTimer] = useState<number>(3); // 3초 타이머 설정
   const [unaskedQuestions, setUnaskedQuestions] = useState(
     Array.from({ length: totalQuestions }, (_, index) => index)
   );
 
-  // 타이머 업데이트 및 5초 후 답 표시
+  // 타이머 업데이트 및 3초 후 답 표시
   useEffect(() => {
     if (timer > 0) {
       const countdown = setTimeout(() => {
@@ -45,7 +45,7 @@ export default function ProverbQuiz({ totalQuestions, proverbs, onFinish }: Quiz
 
   // 문제 번호가 바뀔 때마다 타이머와 답을 리셋
   useEffect(() => {
-    setTimer(5); // 타이머를 5초로 리셋
+    setTimer(3); // 타이머를 3초로 리셋
     setShowAnswer(false);
   }, [currentQuestionIndex]);
 
