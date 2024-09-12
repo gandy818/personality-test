@@ -22,7 +22,6 @@ export default function QuizPage() {
   const [results, setResults] = useState<Result[]>([]);
   const searchParams = useSearchParams();
   const count = searchParams.get('count') === null ? '10' : searchParams.get('count'); // 쿼리에서 문제 수를 가져옴
-
   const proverbs: Proverb[] = [
     { front: '가는 말이 고와야', back: '오는 말이 곱다' },
     { front: '등잔 밑이', back: '어둡다' },
