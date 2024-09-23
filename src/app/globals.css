@@ -28,7 +28,7 @@
 body {
   @layer components {
     .btn {
-      @apply rounded-lg border-[#EFEFEF] bg-white hover:bg-white;
+      @apply rounded-lg border-[#EFEFEF] bg-white  text-primary;
     }
 
     .btn:disabled {

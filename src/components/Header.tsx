@@ -4,7 +4,7 @@ import GobackBtn from './GobackBtn';
 export default function GoodsHeader() {
   return (
     <header className=" mx-auto w-full bg-white">
-      <div className="mx-auto flex h-12 items-center justify-between px-[18px]">
+      <div className="mx-auto flex h-12 items-center justify-between px-[4.5rem]">
         {/* 뒤로가기 */}
         {/* TODO: 혹은 router.back() 받기 */}
         <GobackBtn link="/" />

@@ -4,33 +4,61 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="h-screen">
-      <h1 className="text-center text-4xl font-semibold mt-40 mb-32">다양한 퀴즈를 즐겨보세요!</h1>
-      <div className="flex justify-center items-center">
-        <div className="grid sm:grid-cols-4 grid-cols-1 w-full gap-4">
-          <div className="btn btn-outline gap-8 flex-col flex-1 px-4 py-2 text-center font-bold rounded-xl h-52 hover:bg-white">
-            <h1 className="py-3 text-3xl">상식 퀴즈1</h1>
-            <Link href="/generalKnowledge" className="btn btn-secondary">
-              START
-            </Link>
+    <main className="h-screen relative">
+      {/* 블럭 */}
+      <>
+        <img src="/images/블럭1.svg" className="absolute right-24 top-72 -z-10" />
+        <img src="/images/블럭2.svg" className="absolute left-60 top-52 -z-10" />
+        <img src="/images/블럭3.svg" className="absolute left-28 bottom-52 -z-10" />
+      </>
+
+      {/* 헤더 */}
+      <header className="h-[6.25rem]">
+        <Link href="/">
+          <img src="/images/로고.svg" className="py-[1.875rem] pl-[7.5rem]" />
+        </Link>
+      </header>
+
+      {/* 타이틀 */}
+      <h1 className="text-center text-[3rem] font-medium mt-10">
+        다 함께 친해져야 하는 지금
+        <span className="text-[4rem] block font-black">
+          모두 다 <span className="text-[#FF841F]">블럭!</span>
+        </span>
+      </h1>
+
+      <div className="flex-center mt-[5.25rem]">
+        <div className="grid sm:grid-cols-2 grid-cols-1 w-fit gap-x-24 gap-y-14">
+          {/* 스피드게임 */}
+          <div className="relative">
+            <div className="absolute bg-[#6867CE] -top-5 rounded left-10 w-10 h-10 -z-10" />
+            <div className="absolute bg-[#6867CE] -top-5 rounded right-10 w-10 h-10 -z-10" />
+
+            <div className="w-[15.25rem] h-[15.25rem] bg-[#7675FF] hover:bg-[#7675FF] px-[2.625rem] pt-16 text-center rounded-2xl">
+              <h1 className="text-[1.75rem] text-white font-semibold h-16">스피드 게임</h1>
+              <Link
+                href="/speedgame"
+                className="btn text-white bg-[#ffffff4d] hover:bg-[#ffffff4d] px-6 py-3 border-none rounded-lg text-lg font-semibold mt-6"
+              >
+                둘러보기
+              </Link>
+            </div>
           </div>
-          <div className="btn btn-outline gap-8 flex-col flex-1 px-4 py-2 text-center font-bold rounded-xl h-52 hover:bg-white">
-            <h1 className="py-3 text-3xl">상식 퀴즈2</h1>
-            <Link href="/generalKnowledge2" className="btn btn-secondary">
-              START
-            </Link>
-          </div>
-          <div className="btn btn-outline gap-8 flex-col flex-1 px-4 py-2 text-center font-bold rounded-xl h-52 hover:bg-white">
-            <h1 className="py-3 text-3xl">속담</h1>
-            <Link href="/proverb" className="btn btn-secondary">
-              START
-            </Link>
-          </div>
-          <div className="btn btn-outline gap-8 flex-col flex-1 px-4 py-2 text-center font-bold rounded-xl h-52 hover:bg-white">
-            <h1 className="py-3 text-3xl">속담</h1>
-            <Link href="/generalKnowledge2" className="btn btn-secondary">
-              START
-            </Link>
+
+          {/* 이어말하기 */}
+          <div className="relative">
+            <div className="absolute bg-[#E3622D] -top-5 rounded left-10 w-10 h-10 -z-10" />
+            <div className="absolute bg-[#E3622D] -top-5 rounded right-10 w-10 h-10 -z-10" />
+
+            <div className="w-[15.25rem] h-[15.25rem] bg-[#FF611F] hover:bg-[#FF611F] px-[2.625rem]  pt-16 text-center rounded-2xl">
+              <h1 className="text-[1.75rem] text-white font-semibold h-16">이어말하기</h1>
+              <Link
+                href="/speedgame"
+                className="btn text-white bg-[#ffffff4d] hover:bg-[#ffffff4d] px-6 py-3 border-none rounded-lg text-lg font-semibold mt-6"
+              >
+                둘러보기
+              </Link>
+            </div>
           </div>
         </div>
       </div>
