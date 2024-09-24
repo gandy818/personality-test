@@ -25,6 +25,15 @@
   @apply flex items-center justify-center;
 }
 
+/* 커서 */
+.custom-cursor,
+.custom-cursor:hover,
+.custom-cursor:active,
+.custom-cursor:focus,
+.custom-cursor a {
+  cursor: url('/images/마우스.png') 48 57, auto;
+}
+
 body {
   @layer components {
     .btn {

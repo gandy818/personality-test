@@ -14,7 +14,7 @@ export default function speedgameKeywordPage() {
       {/* 헤더 */}
       <header className="h-[6.25rem]">
         <Link href="/">
-          <img src="/images/로고.svg" className="py-[1.875rem] pl-[7.5rem]" />
+          <img src="/images/로고.svg" alt="logo" className="py-[1.875rem] pl-[7.5rem]" />
         </Link>
       </header>
 

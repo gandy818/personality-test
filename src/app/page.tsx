@@ -7,15 +7,15 @@ export default function Home() {
     <main className="h-screen relative">
       {/* 블럭 */}
       <>
-        <img src="/images/블럭1.svg" className="absolute right-24 top-72 -z-10" />
-        <img src="/images/블럭2.svg" className="absolute left-60 top-52 -z-10" />
-        <img src="/images/블럭3.svg" className="absolute left-28 bottom-52 -z-10" />
+        <img src="/images/블럭1.svg" alt="block1" className="absolute right-24 top-72 -z-10" />
+        <img src="/images/블럭2.svg" alt="block2" className="absolute left-60 top-52 -z-10" />
+        <img src="/images/블럭3.svg" alt="block3" className="absolute left-28 bottom-52 -z-10" />
       </>
 
       {/* 헤더 */}
       <header className="h-[6.25rem]">
         <Link href="/">
-          <img src="/images/로고.svg" className="py-[1.875rem] pl-[7.5rem]" />
+          <img src="/images/로고.svg" alt="logo" className="py-[1.875rem] pl-[7.5rem]" />
         </Link>
       </header>
 

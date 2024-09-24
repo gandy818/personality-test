@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-[#FFF8EC]">
+    <html lang="en" className="bg-[#FFF8EC] custom-cursor">
       <head>
         <script
           async

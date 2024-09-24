@@ -6,7 +6,7 @@ export default function speedgamePage() {
       {/* 헤더 */}
       <header className="h-[6.25rem]">
         <Link href="/">
-          <img src="/images/로고.svg" className="py-[1.875rem] pl-[7.5rem]" />
+          <img src="/images/로고.svg" alt="logo" className="py-[1.875rem] pl-[7.5rem]" />
         </Link>
       </header>
 
@@ -23,9 +23,9 @@ export default function speedgamePage() {
           href="snack"
           className="flex shadow-block justify-around self-center bg-[#9191FF] w-[45rem] h-[6.25rem] px-2 py-6 rounded-2xl text-white text-[2.5rem] font-bold text-center"
         >
-          <img src="/images/블럭동그라미.svg" />
+          <img src="/images/블럭동그라미.svg" alt="blockImg" />
           과자
-          <img src="/images/블럭동그라미.svg" />
+          <img src="/images/블럭동그라미.svg" alt="blockImg" />
         </Link>
 
         {/* 가수 */}
@@ -33,9 +33,9 @@ export default function speedgamePage() {
           href="/"
           className="flex shadow-block justify-around self-center bg-[#9191FF] w-[45rem] h-[6.25rem] px-2 py-6 rounded-2xl text-white text-[2.5rem] font-bold text-center"
         >
-          <img src="/images/블럭동그라미.svg" />
+          <img src="/images/블럭동그라미.svg" alt="blockImg" />
           가수
-          <img src="/images/블럭동그라미.svg" />
+          <img src="/images/블럭동그라미.svg" alt="blockImg" />
         </Link>
 
         {/* 브랜드 */}
@@ -43,9 +43,9 @@ export default function speedgamePage() {
           href="/"
           className="flex shadow-block justify-around self-center bg-[#9191FF] w-[45rem] h-[6.25rem] px-2 py-6 rounded-2xl text-white text-[2.5rem] font-bold text-center"
         >
-          <img src="/images/블럭동그라미.svg" />
+          <img src="/images/블럭동그라미.svg" alt="blockImg" />
           브랜드
-          <img src="/images/블럭동그라미.svg" />
+          <img src="/images/블럭동그라미.svg" alt="blockImg" />
         </Link>
       </div>
     </div>
