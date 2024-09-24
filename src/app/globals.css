@@ -17,7 +17,8 @@
 }
 
 * {
-  font-family: 'Pretendard', sans-serif;
+  font-family: 'Dunggeunmiso', sans-serif;
+  font-weight: 600;
   color: #1a1a1a;
 }
 /* flex 가운데 정렬 */
@@ -30,20 +31,21 @@
 .custom-cursor:hover,
 .custom-cursor:active,
 .custom-cursor:focus,
-.custom-cursor a {
+.custom-cursor a,
+.custom-cursor img {
   cursor: url('/images/마우스.png') 48 57, auto;
 }
 
 body {
-  @layer components {
+  /* @layer components {
     .btn {
-      @apply rounded-lg border-[#EFEFEF] bg-white  text-primary;
+      @apply rounded-lg border-[#EFEFEF] bg-white text-primary;
     }
 
     .btn:disabled {
       @apply bg-[#A2A2A2] text-[#d0d0d0];
     }
-  }
+  } */
 }
 
 @layer utilities {
@@ -53,6 +55,20 @@ body {
 }
 
 /* 폰트 패밀리 설정 */
+@font-face {
+  font-family: 'Dunggeunmiso';
+  src: url('/fonts/Dunggeunmiso/Hakgyoansim Dunggeunmiso OTF B.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dunggeunmiso';
+  src: url('/fonts/Dunggeunmiso/Hakgyoansim Dunggeunmiso OTF R.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'Pretendard';
   src: url('/fonts/Pretendard/Pretendard-Thin.otf') format('opentype');

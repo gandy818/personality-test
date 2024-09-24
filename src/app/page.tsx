@@ -1,8 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main className="h-screen relative">
       {/* 블럭 */}
@@ -13,10 +16,15 @@ export default function Home() {
       </>
 
       {/* 헤더 */}
-      <header className="h-[6.25rem]">
-        <Link href="/">
-          <img src="/images/로고.svg" alt="logo" className="py-[1.875rem] pl-[7.5rem]" />
-        </Link>
+      <header className="h-[6.25rem] relative py-[1.625rem] border-b border-[#9879451a]">
+        <button onClick={() => router.back()} className="absolute">
+          <img src="/images/뒤로가기.svg" alt="logo" className="pl-[7.5rem]" />
+        </button>
+        <div className="flex-center gap-[477px] h-12">
+          <Link href="/" className="w-fit flex-center">
+            <img src="/images/로고.svg" alt="logo" />
+          </Link>
+        </div>
       </header>
 
       {/* 타이틀 */}
