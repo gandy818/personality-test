@@ -402,26 +402,21 @@ export default function SpeedgameComponent() {
               {time}
             </div>
           </div>
-          <div className="max-w-[800px] mx-auto">
-            <div
-              className="text-center font-bold mt-10 mb-32 text-[150px]"
-              // style={{
-              //   fontSize: 'clamp(64px, 12vw, 150px)',
-              // }}
-            >
-              {shuffledList[currentIndex]}
-            </div>
+
+          <div className="text-center font-bold mt-10 mb-32 text-[150px]">
+            {shuffledList[currentIndex]}
           </div>
+
           {/* 버튼들 */}
           <div className="flex mx-auto w-fit gap-6">
             <button
-              className="btn bg-[#FF5E66] hover:bg-[#FF5E66] text-white rounded-2xl w-[25rem] h-[6.25rem] shadow-block text-[2.5rem]"
+              className="btn bg-[#FF5E66] hover:bg-[#FF5E66] text-white rounded-2xl w-[20rem] h-[5.25rem] shadow-block text-[32px]"
               onClick={() => handleButton('pass')}
             >
               PASS
             </button>
             <button
-              className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl w-[25rem] h-[6.25rem] shadow-block text-[2.5rem]"
+              className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl w-[20rem] h-[5.25rem] shadow-block text-[32px]"
               onClick={() => handleButton('correct')}
             >
               정답!
