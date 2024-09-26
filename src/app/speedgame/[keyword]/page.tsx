@@ -1,9 +1,10 @@
+// 무조건 서버 사이드
 import SpeedgameComponent from '@/components/speedgame/SpeedgameComponent';
 import Link from 'next/link';
 
 // 빌드를 위한 경로 미리 설정
 export async function generateStaticParams() {
-  const keywords = ['fruit', 'example2', 'example3']; // 실제 데이터베이스나 API 호출을 통해 keyword 목록을 가져올 수 있습니다.
+  const keywords = ['fruit', 'singer', 'brand']; // 실제 데이터베이스나 API 호출을 통해 keyword 목록을 가져올 수 있습니다.
 
   return keywords.map((keyword) => ({
     keyword, // 각 keyword 값을 반환

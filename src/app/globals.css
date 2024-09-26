@@ -32,8 +32,8 @@
 .custom-cursor:active,
 .custom-cursor:focus,
 .custom-cursor a,
-.custom-cursor img {
-  cursor: url('/images/마우스.png') 48 57, auto;
+.custom-cursor * {
+  cursor: url('/images/mouse.png') 48 57, auto !important;
 }
 
 body {

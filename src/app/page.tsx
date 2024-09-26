@@ -28,25 +28,25 @@ export default function Home() {
       </header>
 
       {/* 타이틀 */}
-      <h1 className="text-center text-[3rem] font-medium mt-10">
+      <h1 className="text-center text-[32px] font-medium mt-10">
         다 함께 친해져야 하는 지금
-        <span className="text-[4rem] block font-black">
+        <span className="text-[54px] block font-black">
           모두 다 <span className="text-[#FF841F]">블럭!</span>
         </span>
       </h1>
 
       <div className="flex-center mt-[5.25rem]">
-        <div className="grid sm:grid-cols-2 grid-cols-1 w-fit gap-x-24 gap-y-14">
+        <div className="grid sm:grid-cols-2 grid-cols-1 w-fit gap-x-16 gap-y-12">
           {/* 스피드게임 */}
           <div className="relative">
             <div className="absolute bg-[#6867CE] -top-5 rounded left-10 w-10 h-10 -z-10" />
             <div className="absolute bg-[#6867CE] -top-5 rounded right-10 w-10 h-10 -z-10" />
 
-            <div className="w-[15.25rem] h-[15.25rem] bg-[#7675FF] hover:bg-[#7675FF] px-[2.625rem] pt-16 text-center rounded-2xl">
-              <h1 className="text-[1.75rem] text-white font-semibold h-16">스피드 게임</h1>
+            <div className="w-[14.25rem] h-[14.25rem] bg-[#7675FF] hover:bg-[#7675FF] px-[2.625rem] pt-16 text-center rounded-2xl">
+              <h1 className="text-[1.5rem] text-white font-semibold h-16">스피드 게임</h1>
               <Link
                 href="/speedgame"
-                className="btn text-white bg-[#ffffff4d] hover:bg-[#ffffff4d] px-6 py-3 border-none rounded-lg text-lg font-semibold mt-6"
+                className="btn text-white bg-[#ffffff4d] hover:bg-[#ffffff4d] px-6 py-3 border-none rounded-lg text-base font-semibold mt-6"
               >
                 둘러보기
               </Link>
@@ -58,11 +58,11 @@ export default function Home() {
             <div className="absolute bg-[#E3622D] -top-5 rounded left-10 w-10 h-10 -z-10" />
             <div className="absolute bg-[#E3622D] -top-5 rounded right-10 w-10 h-10 -z-10" />
 
-            <div className="w-[15.25rem] h-[15.25rem] bg-[#FF611F] hover:bg-[#FF611F] px-[2.625rem]  pt-16 text-center rounded-2xl">
-              <h1 className="text-[1.75rem] text-white font-semibold h-16">이어말하기</h1>
+            <div className="w-[14.25rem] h-[14.25rem] bg-[#FF611F] hover:bg-[#FF611F] px-[2.625rem]  pt-16 text-center rounded-2xl">
+              <h1 className="text-[1.5rem] text-white font-semibold h-16">이어말하기</h1>
               <Link
                 href="/speedgame"
-                className="btn text-white bg-[#ffffff4d] hover:bg-[#ffffff4d] px-6 py-3 border-none rounded-lg text-lg font-semibold mt-6"
+                className="btn text-white bg-[#ffffff4d] hover:bg-[#ffffff4d] px-6 py-3 border-none rounded-lg text-base font-semibold mt-6"
               >
                 둘러보기
               </Link>

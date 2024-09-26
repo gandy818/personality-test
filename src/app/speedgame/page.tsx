@@ -26,7 +26,7 @@ export default function speedgamePage() {
         {/* 과자 */}
         <Link
           href="fruit"
-          className="flex shadow-block justify-around self-center bg-[#9191FF] w-[45rem] h-[6.25rem] px-2 py-6 rounded-2xl text-white text-[2.5rem] font-bold text-center"
+          className="btn flex shadow-block justify-around self-center bg-[#9191FF] border-none hover:bg-[#9191FF] w-[45rem] h-[6.25rem] px-2 py-6 rounded-2xl text-white text-[2.5rem] font-bold text-center"
         >
           <img src="/images/블럭동그라미.svg" alt="blockImg" />
           과일
@@ -35,8 +35,8 @@ export default function speedgamePage() {
 
         {/* 가수 */}
         <Link
-          href="/"
-          className="flex shadow-block justify-around self-center bg-[#9191FF] w-[45rem] h-[6.25rem] px-2 py-6 rounded-2xl text-white text-[2.5rem] font-bold text-center"
+          href="singer"
+          className="btn flex shadow-block justify-around self-center bg-[#9191FF] hover:bg-[#9191FF] border-none w-[45rem] h-[6.25rem] px-2 py-6 rounded-2xl text-white text-[2.5rem] font-bold text-center"
         >
           <img src="/images/블럭동그라미.svg" alt="blockImg" />
           가수
@@ -45,8 +45,8 @@ export default function speedgamePage() {
 
         {/* 브랜드 */}
         <Link
-          href="/"
-          className="flex shadow-block justify-around self-center bg-[#9191FF] w-[45rem] h-[6.25rem] px-2 py-6 rounded-2xl text-white text-[2.5rem] font-bold text-center"
+          href="brand"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-[45rem] h-[6.25rem] px-2 py-6 rounded-2xl text-white text-[2.5rem] font-bold text-center"
         >
           <img src="/images/블럭동그라미.svg" alt="blockImg" />
           브랜드
