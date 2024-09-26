@@ -61,7 +61,7 @@ export default function Home() {
             <div className="w-[14.25rem] h-[14.25rem] bg-[#FF611F] hover:bg-[#FF611F] px-[2.625rem]  pt-16 text-center rounded-2xl">
               <h1 className="text-[1.5rem] text-white font-semibold h-16">이어말하기</h1>
               <Link
-                href="/speedgame"
+                href="/relayspeaking"
                 className="btn text-white bg-[#ffffff4d] hover:bg-[#ffffff4d] px-6 py-3 border-none rounded-lg text-base font-semibold mt-6"
               >
                 둘러보기

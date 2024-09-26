@@ -20,7 +20,7 @@ const useTimer = (initialTime: number) => {
     }
   }, [time]);
 
-  return [time, setTime, finish] as const; // 반환
+  return [time, setTime, finish, setFinish] as const; // 반환
 };
 
 export default useTimer;

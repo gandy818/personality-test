@@ -1,6 +1,7 @@
 'use client';
 
 import useTimer from '@/hooks/useTimer';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
@@ -342,7 +343,7 @@ const shuffleList = (list: string[]) => {
 };
 
 export default function SpeedgameComponent() {
-  const [time, _, finish] = useTimer(60);
+  const [time, setTime, finish, setFinish] = useTimer(60);
   const [shuffledList, setShuffledList] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [resultList, setResultList] = useState<string[]>([]);
@@ -350,7 +351,6 @@ export default function SpeedgameComponent() {
   const keyword = pathParams.keyword as string;
 
   useEffect(() => {
-    console.log(keyword);
     const keywordList = keywordMap[keyword];
 
     // 컴포넌트가 마운트될 때 리스트를 섞음
@@ -367,25 +367,52 @@ export default function SpeedgameComponent() {
   return (
     <div>
       {finish ? (
-        <div>
-          <div>결과</div>
-          <div>
+        <div
+          className="bg-white w-[1136px] mx-auto mt-12 p-10 rounded-2xl border-2 border-[#98794533]"
+          style={{ boxShadow: '0px 0px 10px 2px rgba(152, 121, 69, 0.20)' }}
+        >
+          <div className="bg-[#452F08] rounded-[90px] px-[88px] py-6 text-white text-[40px] font-extrabold w-[251px] mx-auto mb-6">
+            결과
+          </div>
+          <div className="h-[466px] overflow-y-scroll bg-[#F7F6F3] flex flex-col gap-6 py-8 px-20">
             {resultList.map((item, index) => {
               return (
-                <div key={index}>
-                  {index + 1}.{shuffledList[index]} {item}
+                <div key={index} className="flex justify-between">
+                  <p className="text-[32px] font-semibold">{shuffledList[index]}</p>
+                  {item === 'PASS' ? (
+                    <p className="text-[#FF5E66] flex gap-2 text-[40px] font-semibold">
+                      {item}
+                      <img src="/images/틀림.svg" />
+                    </p>
+                  ) : (
+                    <p className="text-[#2EBA41] flex gap-2 text-[40px] font-semibold">
+                      {item}
+                      <img src="/images/정답.svg" />
+                    </p>
+                  )}
                 </div>
               );
             })}
           </div>
           {/* 버튼들 */}
-          <div className="flex mx-auto w-fit gap-6">
-            <button className="btn bg-[#FF5E66] hover:bg-[#FF5E66] text-white rounded-2xl w-[25rem] h-[6.25rem] shadow-block text-[2.5rem]">
-              다시하기
+          <div className="flex mx-auto w-fit gap-6 mt-10">
+            <button
+              className="btn flex gap-2 bg-[#616161] hover:bg-[#616161] rounded-2xl w-[320px] h-[84px] shadow-block "
+              onClick={() => {
+                setFinish(false);
+                setTime(60);
+              }}
+            >
+              <img src="/images/다시하기.svg" alt="다시하기" />
+              <p className="text-white text-[32px]">다시하기</p>
             </button>
-            <button className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl w-[25rem] h-[6.25rem] shadow-block text-[2.5rem]">
-              홈으로
-            </button>
+            <Link
+              href={`/`}
+              className="btn bg-[#FF841F] hover:bg-[#FF841F] rounded-2xl w-[320px] h-[84px] shadow-block "
+            >
+              <img src="/images/홈으로.svg" alt="홈으로" />
+              <p className="text-white text-[32px]">홈으로</p>
+            </Link>
           </div>
         </div>
       ) : (
@@ -411,14 +438,14 @@ export default function SpeedgameComponent() {
           {/* 버튼들 */}
           <div className="flex mx-auto w-fit gap-6">
             <button
-              className="btn bg-[#FF5E66] hover:bg-[#FF5E66] text-white rounded-2xl w-[20rem] h-[5.25rem] shadow-block text-[32px]"
-              onClick={() => handleButton('pass')}
+              className="btn bg-[#FF5E66] hover:bg-[#FF5E66] text-white rounded-2xl w-[320px] h-[84px] shadow-block text-[32px]"
+              onClick={() => handleButton('PASS')}
             >
               PASS
             </button>
             <button
-              className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl w-[20rem] h-[5.25rem] shadow-block text-[32px]"
-              onClick={() => handleButton('correct')}
+              className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl w-[320px] h-[84px] shadow-block text-[32px]"
+              onClick={() => handleButton('정답')}
             >
               정답!
             </button>
