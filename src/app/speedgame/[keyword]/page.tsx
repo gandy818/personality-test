@@ -16,8 +16,8 @@ export default function speedgameKeywordPage() {
     <div>
       {/* 헤더 */}
       <header className="h-[6.25rem] relative py-[1.625rem] border-b border-[#9879451a]">
-        <Link href={'/speedgame'} className="absolute">
-          <img src="/images/뒤로가기.svg" alt="logo" className="pl-[7.5rem]" />
+        <Link href={'/'} className="absolute ">
+          <img src="/images/뒤로가기.svg" alt="logo" className="pl-5 sm:pl-[7.5rem]" />
         </Link>
         <div className="flex-center gap-[477px] h-12">
           <Link href="/" className="w-fit flex-center">

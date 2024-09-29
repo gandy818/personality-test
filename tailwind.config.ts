@@ -15,6 +15,10 @@ const config: Config = {
       boxShadow: {
         block: '0px 5px 10px 0px rgba(0, 0, 0, 0.16)',
       },
+      screens: {
+        '2xs': '320px',
+        xs: '480px',
+      },
     },
   },
   plugins: [require('daisyui')],

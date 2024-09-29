@@ -343,7 +343,7 @@ const shuffleList = (list: string[]) => {
 };
 
 export default function SpeedgameComponent() {
-  const [time, setTime, finish, setFinish] = useTimer(60);
+  const [time, setTime, finish, setFinish] = useTimer(0);
   const [shuffledList, setShuffledList] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [resultList, setResultList] = useState<string[]>([]);
@@ -368,26 +368,28 @@ export default function SpeedgameComponent() {
     <div>
       {finish ? (
         <div
-          className="bg-white w-[1136px] mx-auto mt-12 p-10 rounded-2xl border-2 border-[#98794533]"
+          className="bg-white w-[90%] mx-5 lg:max-w-[1136px] xs:mx-auto my-12 p-4 xs:p-10 rounded-2xl border-2 border-[#98794533]"
           style={{ boxShadow: '0px 0px 10px 2px rgba(152, 121, 69, 0.20)' }}
         >
-          <div className="bg-[#452F08] rounded-[90px] px-[88px] py-6 text-white text-[40px] font-extrabold w-[251px] mx-auto mb-6">
+          <div className="bg-[#452F08] rounded-[90px] px-10 xs:px-[88px] py-3 xs:py-6 text-white text-[24px] xs:text-[40px] font-extrabold w-[130px] xs:w-[251px] mx-auto mb-6">
             결과
           </div>
-          <div className="h-[466px] overflow-y-scroll bg-[#F7F6F3] flex flex-col gap-6 py-8 px-20">
+
+          {/* 결과 목록 */}
+          <div className="h-[466px] overflow-y-scroll bg-[#F7F6F3] flex flex-col gap-6 py-8 px-4 xs:px-20">
             {resultList.map((item, index) => {
               return (
                 <div key={index} className="flex justify-between">
-                  <p className="text-[32px] font-semibold">{shuffledList[index]}</p>
+                  <p className="text-2xl xs:text-[32px] font-semibold">{shuffledList[index]}</p>
                   {item === 'PASS' ? (
-                    <p className="text-[#FF5E66] flex gap-2 text-[40px] font-semibold">
+                    <p className="text-[#FF5E66] flex gap-2 text-[32px] xs:text-[40px] font-semibold">
                       {item}
-                      <img src="/images/틀림.svg" />
+                      <img src="/images/틀림.svg" className="w-8 xs:w-full" />
                     </p>
                   ) : (
-                    <p className="text-[#2EBA41] flex gap-2 text-[40px] font-semibold">
+                    <p className="text-[#2EBA41] flex gap-2 text-[32px] xs:text-[40px] font-semibold">
                       {item}
-                      <img src="/images/정답.svg" />
+                      <img src="/images/정답.svg" className="w-8 xs:w-full" />
                     </p>
                   )}
                 </div>
@@ -395,23 +397,23 @@ export default function SpeedgameComponent() {
             })}
           </div>
           {/* 버튼들 */}
-          <div className="flex mx-auto w-fit gap-6 mt-10">
+          <div className="flex xs:mx-auto lg:w-fit w-full gap-2 xs:gap-6 mt-10">
             <button
-              className="btn flex gap-2 bg-[#616161] hover:bg-[#616161] rounded-2xl w-[320px] h-[84px] shadow-block "
+              className="btn flex gap-2 bg-[#616161] hover:bg-[#616161] rounded-2xl w-full flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block"
               onClick={() => {
                 setFinish(false);
                 setTime(60);
               }}
             >
-              <img src="/images/다시하기.svg" alt="다시하기" />
-              <p className="text-white text-[32px]">다시하기</p>
+              <img src="/images/다시하기.svg" alt="다시하기" className="w-5 xs:w-8" />
+              <p className="text-white xs:text-[30px] text-[20px]">다시하기</p>
             </button>
             <Link
               href={`/`}
-              className="btn bg-[#FF841F] hover:bg-[#FF841F] rounded-2xl w-[320px] h-[84px] shadow-block "
+              className="btn bg-[#FF841F] hover:bg-[#FF841F] rounded-2xl flex-1 w-full sm:w-[320px] h-[64px] xs:h-[84px] shadow-block"
             >
               <img src="/images/홈으로.svg" alt="홈으로" />
-              <p className="text-white text-[32px]">홈으로</p>
+              <p className="text-white xs:text-[30px] text-[20px]">홈으로</p>
             </Link>
           </div>
         </div>
@@ -419,32 +421,33 @@ export default function SpeedgameComponent() {
         <div>
           {/* 타이머 */}
           <div
-            className="mx-auto h-[200px] w-[200px]"
+            className="mx-auto h-[168px] w-[168px]"
             style={{ backgroundImage: 'url(/images/시계.svg)', backgroundRepeat: 'no-repeat' }}
           >
             <div
               className={`${
                 time <= 10 ? 'text-[#FF3204]' : ''
-              } text-[44px] flex-center h-[200px] pt-3`}
+              } text-[44px] flex-center h-[168px] pt-3`}
             >
               {time}
             </div>
           </div>
 
-          <div className="text-center font-bold mt-10 mb-32 text-[150px]">
+          {/* 단어 */}
+          <div className="text-center font-bold mt-10 mb-32 text-[80px] xs:text-[150px]">
             {shuffledList[currentIndex]}
           </div>
 
           {/* 버튼들 */}
-          <div className="flex mx-auto w-fit gap-6">
+          <div className="flex mx-auto w-full sm:w-fit gap-6 px-5">
             <button
-              className="btn bg-[#FF5E66] hover:bg-[#FF5E66] text-white rounded-2xl w-[320px] h-[84px] shadow-block text-[32px]"
+              className="btn bg-[#FF5E66] hover:bg-[#FF5E66] text-white rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
               onClick={() => handleButton('PASS')}
             >
               PASS
             </button>
             <button
-              className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl w-[320px] h-[84px] shadow-block text-[32px]"
+              className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
               onClick={() => handleButton('정답')}
             >
               정답!

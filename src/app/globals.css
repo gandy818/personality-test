@@ -29,13 +29,18 @@
 html,
 body,
 .custom-cursor,
-.custom-cursor:hover,
+/* .custom-cursor:active,
+.custom-cursor:focus, */
+.custom-cursor * {
+  cursor: url('/images/mouse.svg') 32 10, auto !important;
+}
+
 .custom-cursor:active,
 .custom-cursor:focus,
-.custom-cursor a,
-.custom-cursor *,
-.custom-cursor *:hover {
-  cursor: url('/images/mouse.png') 52 50, auto !important;
+.custom-cursor:hover,
+.custom-cursor button,
+.custom-cursor a {
+  cursor: url('/images/hovermouse.svg') 32 40, auto !important;
 }
 
 body {
