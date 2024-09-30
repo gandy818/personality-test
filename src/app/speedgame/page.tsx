@@ -52,6 +52,26 @@ export default function speedgamePage() {
           브랜드
           <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
         </Link>
+
+        {/* 과자 */}
+        <Link
+          href="snack"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          과자
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 동물 */}
+        <Link
+          href="animal"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          동물
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
       </div>
     </div>
   );
