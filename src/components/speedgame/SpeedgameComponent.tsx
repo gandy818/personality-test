@@ -343,7 +343,7 @@ const shuffleList = (list: string[]) => {
 };
 
 export default function SpeedgameComponent() {
-  const [time, setTime, finish, setFinish] = useTimer(0);
+  const [time, setTime, finish, setFinish] = useTimer(60);
   const [shuffledList, setShuffledList] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [resultList, setResultList] = useState<string[]>([]);
