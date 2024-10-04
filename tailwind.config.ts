@@ -16,7 +16,7 @@ const config: Config = {
         block: '0px 5px 10px 0px rgba(0, 0, 0, 0.16)',
       },
       screens: {
-        '2xs': '320px',
+        xxs: '348px',
         xs: '480px',
       },
     },

@@ -18,12 +18,12 @@ export default function speedgamePage() {
       {/* 타이틀 */}
       <h1 className="text-center mt-10 text-[32px] xs:text-[64px] font-black">스피드 게임</h1>
       <p className="mt-6 text-[#8F8F8F] text-base font-normal xs:text-2xl text-center">
-        제한시간 1분 안에 최대한 많은 문제를 맞춰보세요!
+        제한시간 100초 안에 최대한 많은 문제를 맞춰보세요!
       </p>
 
       {/* 목록 */}
       <div className="flex gap-6 xs:gap-14 flex-col my-16 px-5">
-        {/* 과자 */}
+        {/* 과일 */}
         <Link
           href="fruit"
           className="btn flex shadow-block justify-around self-center bg-[#9191FF] border-none hover:bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
@@ -70,6 +70,76 @@ export default function speedgamePage() {
         >
           <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
           동물
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 영화 */}
+        <Link
+          href="movie"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          영화
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 나라 */}
+        <Link
+          href="country"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          나라이름
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 색상 */}
+        <Link
+          href="color"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          색상
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 직업 */}
+        <Link
+          href="job"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          직업
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 스포츠 */}
+        <Link
+          href="sport"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          스포츠
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 음식 */}
+        <Link
+          href="food"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          음식
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 자동차 브랜드 */}
+        <Link
+          href="carBrand"
+          className="btn hover:bg-[#9191FF] border-none flex shadow-block justify-around self-center bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          자동차 브랜드
           <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
         </Link>
       </div>
