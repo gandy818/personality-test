@@ -18,7 +18,7 @@ export default function relayspeakingPage() {
       {/* 타이틀 */}
       <h1 className="text-center mt-10 text-[32px] xs:text-[64px] font-black">이어 말하기</h1>
       <p className="mt-6 text-[#8F8F8F] text-base font-normal xs:text-2xl text-center">
-        제시하는 문장에 맞춰 뒷문장을 이어말해요. 스피드는 생명!
+        제시된 단어에 이어서 빠르게 다음 단어를 말해보세요!
       </p>
 
       {/* 목록 */}
@@ -26,11 +26,31 @@ export default function relayspeakingPage() {
         {/* 속담 */}
         <Link
           href="fruit"
-          className="btn flex shadow-block justify-around self-center bg-[#9191FF] border-none hover:bg-[#9191FF] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+          className="btn flex shadow-block justify-around self-center bg-[#FF9A42] border-none hover:bg-[#FF9A42] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
         >
-          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8 h-8" />
+          <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8 h-8" />
           속담
-          <img src="/images/블럭동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+          <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 사자성어 */}
+        <Link
+          href="fruit"
+          className="btn flex shadow-block justify-around self-center bg-[#FF9A42] border-none hover:bg-[#FF9A42] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8 h-8" />
+          사자성어
+          <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
+        </Link>
+
+        {/* 네글자 단어 */}
+        <Link
+          href="fruit"
+          className="btn flex shadow-block justify-around self-center bg-[#FF9A42] border-none hover:bg-[#FF9A42] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+        >
+          <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8 h-8" />
+          네글자 단어
+          <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
         </Link>
       </div>
     </div>
