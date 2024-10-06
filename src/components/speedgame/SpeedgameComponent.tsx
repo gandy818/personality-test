@@ -60,7 +60,6 @@ export default function SpeedgameComponent() {
     if (currentIndex >= keywordList.length - 1) {
       setFinish(true);
       setCurrentIndex(0);
-
       return;
     }
 

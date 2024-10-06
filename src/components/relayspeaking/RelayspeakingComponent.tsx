@@ -42,7 +42,10 @@ export default function RelayspeakingComponent() {
           <div className="w-3/4 mx-auto mt-10 h-[466px] overflow-y-scroll">
             {subjectList.map((sentence, index) => {
               return (
-                <div className=" my-2 p-2 bg-white rounded-xl border-2 border-[#98794533]">
+                <div
+                  className=" my-2 p-2 bg-white rounded-xl border-2 border-[#98794533]"
+                  key={index}
+                >
                   <p>
                     {index + 1}. {sentence}
                   </p>
