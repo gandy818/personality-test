@@ -25,7 +25,7 @@ export default function relayspeakingPage() {
       <div className="flex gap-6 xs:gap-14 flex-col my-16 px-5">
         {/* 속담 */}
         <Link
-          href="fruit"
+          href="proverb"
           className="btn flex shadow-block justify-around self-center bg-[#FF9A42] border-none hover:bg-[#FF9A42] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
         >
           <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8 h-8" />
@@ -35,7 +35,7 @@ export default function relayspeakingPage() {
 
         {/* 사자성어 */}
         <Link
-          href="fruit"
+          href="idiom"
           className="btn flex shadow-block justify-around self-center bg-[#FF9A42] border-none hover:bg-[#FF9A42] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
         >
           <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8 h-8" />
@@ -45,11 +45,11 @@ export default function relayspeakingPage() {
 
         {/* 네글자 단어 */}
         <Link
-          href="fruit"
-          className="btn flex shadow-block justify-around self-center bg-[#FF9A42] border-none hover:bg-[#FF9A42] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[32px] xs:text-[40px] font-bold text-center"
+          href="dailyWord"
+          className="btn flex shadow-block justify-around self-center bg-[#FF9A42] border-none hover:bg-[#FF9A42] w-full md:w-[45rem] h-16 xs:h-[6.25rem] px-2 rounded-2xl text-white text-[24px] xxs:text-[30px] xs:text-[40px] font-bold text-center"
         >
           <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8 h-8" />
-          네글자 단어
+          일상 네 글자 단어
           <img src="/images/블럭주황동그라미.svg" alt="blockImg" className="w-6 xs:w-8" />
         </Link>
       </div>

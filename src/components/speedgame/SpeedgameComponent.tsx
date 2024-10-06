@@ -47,16 +47,20 @@ export default function SpeedgameComponent() {
   const [resultList, setResultList] = useState<string[]>([]);
   const pathParams = useParams();
   const keyword = pathParams.keyword as string;
+  const keywordList = keywordMap[keyword];
 
   useEffect(() => {
-    const keywordList = keywordMap[keyword];
-
     // 컴포넌트가 마운트될 때 리스트를 섞음
     setShuffledList(shuffleList([...keywordList]));
   }, []);
 
   // 정답or패스 버튼 핸들링
   const handleButton = (result: string) => {
+    if (currentIndex >= keywordList.length - 1) {
+      setFinish(true);
+      return;
+    }
+
     setCurrentIndex((prevIndex) => prevIndex + 1);
 
     setResultList((prev) => [...prev, result]);
@@ -145,7 +149,7 @@ export default function SpeedgameComponent() {
               className="btn bg-[#FF5E66] hover:bg-[#FF5E66] text-white rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
               onClick={() => handleButton('PASS')}
             >
-              PASS
+              PASS {currentIndex}, {keywordList.length}
             </button>
             <button
               className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
