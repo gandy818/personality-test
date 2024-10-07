@@ -151,7 +151,7 @@ export default function SpeedgameComponent() {
               className="btn bg-[#FF5E66] hover:bg-[#FF5E66] text-white rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
               onClick={() => handleButton('PASS')}
             >
-              PASS {currentIndex}, {keywordList.length}
+              PASS
             </button>
             <button
               className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
