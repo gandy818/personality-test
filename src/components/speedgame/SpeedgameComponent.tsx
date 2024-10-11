@@ -141,7 +141,7 @@ export default function SpeedgameComponent() {
           </div>
 
           {/* 단어 */}
-          <div className="text-center font-bold mt-10 text-wrap mb-32 text-[80px] md:text-[150px]">
+          <div className="text-center font-bold mt-10 text-wrap mb-20 text-[80px] md:text-[150px]">
             {shuffledList[currentIndex]}
           </div>
 
