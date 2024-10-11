@@ -90,12 +90,12 @@ export default function SpeedgameComponent() {
                   {item === 'PASS' ? (
                     <p className="text-[#FF5E66] flex-1 flex-center gap-2 text-[32px] md:text-[40px] font-semibold text-nowrap">
                       {item}
-                      <img src="/images/틀림.svg" className="w-8 md:w-full" />
+                      <img src="/images/틀림.svg" className="w-8 md:w-full max-w-12" />
                     </p>
                   ) : (
                     <p className="text-[#2EBA41] flex-1 flex-center gap-2 text-[32px] md:text-[40px] font-semibold text-nowrap">
                       {item}
-                      <img src="/images/정답.svg" className="w-8 md:w-full" />
+                      <img src="/images/정답.svg" className="w-8 md:w-full max-w-12" />
                     </p>
                   )}
                 </div>

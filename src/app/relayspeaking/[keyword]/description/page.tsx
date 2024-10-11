@@ -33,23 +33,28 @@ export default function RelayspeakingDescriptionPage({ params }: ParamsType) {
       </header>
 
       <div className="my-28">
-        <div className="text-center bg-white w-[820px] p-16 mx-auto border-[5px] rounded-2xl border-[#FF841F]">
-          <p className="w-16 h-16 mx-auto rounded-full bg-[#452F08] text-white flex-center text-[40px]">
-            1
-          </p>
-          <h1 className="pt-12 text-[52px] font-semibold">게임설명</h1>
-          <p className="pt-12 text-2xl text-[#1a1a1a] font-normal">
-            제시하는 문장에 맞춰 뒷문장을 이어 말하는 게임
-          </p>
+        <div className="px-5">
+          <div className="flex flex-col gap-8 md:gap-12 text-center bg-white w-full lg:w-[820px] p-12 xxs:p-16 mx-auto border-[5px] rounded-2xl border-[#FF841F]">
+            <p className="w-16 h-16 mx-auto rounded-full bg-[#452F08] text-white flex-center text-[40px]">
+              1
+            </p>
+            <h1 className="text-4xl xxs:text-[52px] font-semibold">게임설명</h1>
+            <p className="text-2xl text-[#1a1a1a] font-normal">
+              제시하는 문장에 맞춰 뒷문장을 이어 말하는 게임
+            </p>
+          </div>
         </div>
 
-        <div className="w-fit mx-auto mt-11">
-          <Link
-            href={`/relayspeaking/${keyword}/description2`}
-            className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
-          >
-            다음
-          </Link>
+        <div className="mt-11">
+          {/* 버튼들 */}
+          <div className="flex mx-auto w-full sm:w-fit gap-6 px-5 mb-10">
+            <Link
+              className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
+              href={`/relayspeaking/${keyword}/description2`}
+            >
+              다음
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -39,52 +39,60 @@ export default function RelayspeakingComponent() {
 
   return (
     <div className="pb-10">
-      <div className="flex mt-[118px] mx-auto w-fit gap-6 ">
+      <div className="flex flex-col md:flex-row mt-1 px-5 mx-auto w-full md:w-fit gap-6 ">
         {/* 진행자 */}
         <div>
-          <div className="relative">
-            {/* 사회자 이미지 */}
-            <img src="/images/사회자.png" className="mx-auto " />
+          {/* 사회자 이미지 */}
+          <div className="relative hidden md:block">
+            <img src="/images/사회자.png" className="mx-auto" />
           </div>
           {/* 설명 박스 */}
-          <div className="mb-28">
-            <div className="text-center bg-white py-10 px-[69px] mx-auto border-[3px] rounded-2xl border-[#ff611f66]">
-              <h1 className="pt-4 text-[40px] font-semibold text-[#452F08]">진행자</h1>
-              <p className="mt-4 text-[40px] text-[#1a1a1a] font-semibold py-6 bg-[#F7F6F3] px-10">
+          <div>
+            <div className="text-center bg-white py-10 px-10 lg:px-[69px] mx-auto border-[3px] rounded-2xl border-[#ff611f66]">
+              <h1 className="lg:pt-4 xxs:text-3xl md:text-[40px] font-semibold text-[#452F08]">
+                진행자
+              </h1>
+              <p className="mt-4 xxs:text-[30px] md:text-[35px] lg:text-[40px] text-[#1a1a1a] font-semibold py-6 bg-[#F7F6F3] xxs:px-10 leading-[1.2]">
                 {shuffledList[currentIndex].question}
               </p>
             </div>
           </div>
         </div>
+
         {/* 참여자 */}
         <div>
-          <div className="relative">
-            {/* 참여자 이미지 */}
+          {/* 참여자 이미지 */}
+          <div className="relative hidden md:block">
             <img src="/images/참여자.png" className="mx-auto mt-3" />
           </div>
           {/* 설명 박스 */}
-          <div className="mb-28">
-            <div className="text-center bg-white  py-10 px-[69px] mx-auto border-[3px] rounded-2xl border-[#ff611f66]">
-              <h1 className="pt-4 text-[40px] font-semibold text-[#452F08]">참여자</h1>
-              <p className="mt-4 text-[40px] text-[#1a1a1a] font-semibold py-6 bg-[#F7F6F3] px-10">
+          <div>
+            <div className="text-center bg-white py-10 px-10 lg:px-[69px] mx-auto border-[3px] rounded-2xl border-[#ff611f66]">
+              <h1 className="lg:pt-4 xxs:text-3xl md:text-[40px] font-semibold text-[#452F08]">
+                참여자
+              </h1>
+              <p className="mt-4 xxs:text-[30px] md:text-[35px] lg:text-[40px] text-[#1a1a1a] font-semibold py-6 bg-[#F7F6F3] xxs:px-10 leading-[1.2]">
                 {shuffledList[currentIndex].answer}
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-fit mx-auto mt-11 flex gap-6">
+
+      {/* 버튼들 */}
+      <div className="flex xs:mx-auto md:w-fit w-full gap-2 xs:gap-6 mt-10 px-5">
         <Link
           href={`/`}
-          className="btn bg-[#616161] hover:bg-[#616161] text-white rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
+          className="btn bg-[#616161] hover:bg-[#616161] rounded-2xl flex-1 w-full sm:w-[320px] h-[64px] xs:h-[84px] shadow-block"
         >
-          홈으로
+          <img src="/images/홈으로.svg" alt="홈으로" className="w-5 xs:w-8" />
+          <p className="text-white xs:text-[30px] text-[20px]">홈으로</p>
         </Link>
         <button
-          className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
+          className="btn flex gap-2 bg-[#AFE047] hover:bg-[#AFE047]  rounded-2xl w-full flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block"
           onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % shuffledList.length)}
         >
-          다음
+          <p className="text-[#3F4D23] xs:text-[30px] xxs:text-[20px] text-[16px]">다음</p>
         </button>
       </div>
     </div>

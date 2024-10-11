@@ -32,10 +32,10 @@ export default function RelayspeakingDescription2Page({ params }: ParamsType) {
         </div>
       </header>
 
-      <div className="mt-[118px]">
-        <div className="relative max-w-[720px] mx-auto">
+      <div className="mt-10">
+        <div className="relative sm:max-w-[720px] mx-auto hidden sm:block">
           {/* 왼쪽 말풍선 */}
-          <div className="mt-28 flex-center flex-col absolute -top-40">
+          <div className="mt-28 flex-center flex-col left-1 absolute -top-32">
             <p className="bg-[#FF841F] py-6 px-[60px] text-white text-[40px] font-semibold w-fit rounded-full">
               고진
             </p>
@@ -54,10 +54,10 @@ export default function RelayspeakingDescription2Page({ params }: ParamsType) {
           </div>
 
           {/* 사회자 이미지 */}
-          <img src="/images/사회자.png" className="mx-auto " />
+          <img src="/images/사회자.png" className="mx-auto" />
 
           {/* 오른쪽 말풍선 */}
-          <div className="mt-28 flex-center flex-col absolute right-0 bottom-20">
+          <div className="mt-28 flex-center flex-col absolute right-1 bottom-16">
             <p className="bg-[#FF841F] py-6 px-[60px] text-white text-[40px] font-semibold w-fit rounded-full">
               구사
             </p>
@@ -76,31 +76,37 @@ export default function RelayspeakingDescription2Page({ params }: ParamsType) {
           </div>
         </div>
       </div>
-      {/* 설명 박스 */}
+
       <div className="mb-28">
-        <div className="text-center bg-white w-[820px] py-10 px-[69px] mx-auto border-[3px] rounded-2xl border-[#ff611f66]">
-          <p className="w-16 h-16 mx-auto rounded-full bg-[#452F08] text-white flex-center text-[40px]">
-            2
-          </p>
-          <h1 className="pt-4 text-[52px] font-semibold">진행자</h1>
-          <p className="mt-4 text-2xl text-[#1a1a1a] font-normal py-6 bg-[#F7F6F3] px-10">
-            준비된 문장이나 단어를 참고하여 참가자에게 앞부분을 제시해요
-          </p>
+        {/* 설명 박스 */}
+        <div className="px-5">
+          <div className="flex flex-col gap-8 md:gap-4 text-center bg-white w-full lg:w-[820px] py-10 px-12 md:px-[69px] mx-auto border-[3px] rounded-2xl border-[#ff611f66]">
+            <p className="w-16 h-16 mx-auto rounded-full bg-[#452F08] text-white flex-center text-[40px]">
+              2
+            </p>
+            <h1 className="text-4xl xxs:text-[52px] font-semibold">진행자</h1>
+            <p className="text-lg xxs:text-2xl text-[#1a1a1a] font-normal py-6 bg-[#F7F6F3] px-4 xxs:px-10">
+              준비된 문장이나 단어를 참고하여 참가자에게 앞부분을 제시해요
+            </p>
+          </div>
         </div>
 
-        <div className="w-fit mx-auto mt-11 flex gap-6">
-          <Link
-            href={`/relayspeaking/${keyword}/description`}
-            className="btn bg-[#616161] hover:bg-[#616161] text-white rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
-          >
-            이전
-          </Link>
-          <Link
-            href={`/relayspeaking/${keyword}/description3`}
-            className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
-          >
-            다음
-          </Link>
+        <div className="mt-11">
+          {/* 버튼들 */}
+          <div className="flex mx-auto w-full sm:w-fit gap-6 px-5 mb-10">
+            <Link
+              href={`/relayspeaking/${keyword}/description`}
+              className="btn bg-[#616161] hover:bg-[#616161] text-white rounded-2xl flex-1 sm:w-[290px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
+            >
+              이전
+            </Link>
+            <Link
+              href={`/relayspeaking/${keyword}/description3`}
+              className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl flex-1 sm:w-[290px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
+            >
+              다음
+            </Link>
+          </div>
         </div>
       </div>
     </div>
