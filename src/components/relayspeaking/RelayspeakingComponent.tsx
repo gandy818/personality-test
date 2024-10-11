@@ -5,62 +5,88 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { proverbList, idiomList, dailyWordList } from '@/dataList/relayspeaking';
 
+interface SubjectMapType {
+  question: string;
+  answer: string;
+}
+
 // 주제에 따른 리스트 매핑
-const subjectMap: { [key: string]: string[] } = {
+const subjectMap: { [key: string]: SubjectMapType[] } = {
   proverb: proverbList,
   idiom: idiomList,
   dailyWord: dailyWordList,
 };
 
+// 리스트 셔플 함수
+const shuffleList = (list: SubjectMapType[]) => {
+  return list.sort(() => Math.random() - 0.5);
+};
+
 export default function RelayspeakingComponent() {
-  const [showRule, setShowRule] = useState(true);
   const pathParams = useParams();
   const subject = pathParams.keyword as string;
+  const [shuffledList, setShuffledList] = useState<SubjectMapType[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const subjectList = subjectMap[subject];
-  useEffect(() => {}, []);
+
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 리스트를 섞음
+    setShuffledList(shuffleList([...subjectList]));
+  }, []);
+
+  if (shuffledList.length === 0) return null;
 
   return (
-    <>
-      {showRule ? (
+    <div className="pb-10">
+      <div className="flex mt-[118px] mx-auto w-fit gap-6 ">
+        {/* 진행자 */}
         <div>
-          <h1 className="text-center mt-10 text-[32px] xs:text-[64px] font-black">이어 말하기</h1>
-
-          <div className="text-center text-2xl mt-14">
-            <p>진행자: 준비된 문장이나 단어를 참고하여 참가자에게 앞부분을 제시해요.</p>
-            <p>참가자: 진행자가 제시한 문장이나 단어를 듣고, 이어질 뒷부분을 말해요</p>
+          <div className="relative">
+            {/* 사회자 이미지 */}
+            <img src="/images/사회자.png" className="mx-auto " />
           </div>
-
-          <div className="w-3/4 mx-auto mt-10">
-            <button onClick={() => setShowRule(false)} className="btn  w-full">
-              문제 예시
-            </button>
+          {/* 설명 박스 */}
+          <div className="mb-28">
+            <div className="text-center bg-white py-10 px-[69px] mx-auto border-[3px] rounded-2xl border-[#ff611f66]">
+              <h1 className="pt-4 text-[40px] font-semibold text-[#452F08]">진행자</h1>
+              <p className="mt-4 text-[40px] text-[#1a1a1a] font-semibold py-6 bg-[#F7F6F3] px-10">
+                {shuffledList[currentIndex].question}
+              </p>
+            </div>
           </div>
         </div>
-      ) : (
+        {/* 참여자 */}
         <div>
-          <div className="w-3/4 mx-auto mt-10 h-[466px] overflow-y-scroll">
-            {subjectList.map((sentence, index) => {
-              return (
-                <div
-                  className=" my-2 p-2 bg-white rounded-xl border-2 border-[#98794533]"
-                  key={index}
-                >
-                  <p>
-                    {index + 1}. {sentence}
-                  </p>
-                </div>
-              );
-            })}
+          <div className="relative">
+            {/* 참여자 이미지 */}
+            <img src="/images/참여자.png" className="mx-auto mt-3" />
           </div>
-
-          <div className="w-3/4 mx-auto mt-10">
-            <button onClick={() => setShowRule(true)} className="btn w-full">
-              게임 설명
-            </button>
+          {/* 설명 박스 */}
+          <div className="mb-28">
+            <div className="text-center bg-white  py-10 px-[69px] mx-auto border-[3px] rounded-2xl border-[#ff611f66]">
+              <h1 className="pt-4 text-[40px] font-semibold text-[#452F08]">참여자</h1>
+              <p className="mt-4 text-[40px] text-[#1a1a1a] font-semibold py-6 bg-[#F7F6F3] px-10">
+                {shuffledList[currentIndex].answer}
+              </p>
+            </div>
           </div>
         </div>
-      )}
-    </>
+      </div>
+      <div className="w-fit mx-auto mt-11 flex gap-6">
+        <Link
+          href={`/`}
+          className="btn bg-[#616161] hover:bg-[#616161] text-white rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
+        >
+          홈으로
+        </Link>
+        <button
+          className="btn bg-[#AFE047] hover:bg-[#AFE047] text-[#3F4D23] rounded-2xl flex-1 sm:w-[320px] h-[64px] xs:h-[84px] shadow-block text-[32px]"
+          onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % shuffledList.length)}
+        >
+          다음
+        </button>
+      </div>
+    </div>
   );
 }
